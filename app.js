@@ -19,7 +19,7 @@ const app = Vue.createApp({
             }
         },
         futureAge(){
-            return parseInt(this.yourAge) + 5
+            return (this.yourAge) + 5
         }
     }
 });
