@@ -18,11 +18,16 @@
     </header>
     <section id="events">
       <h2>Events in Action</h2>
-      <button v-on:click=add(5)>Add 5</button>
+      <button v-on:click=add(10)>Add 10</button>
       <button v-on:click=substract(5)>substract 5</button>
+      <p v-once>Starting Counter : {{ counter }}</p>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, 'Bjir')" placeholder="Enter Your Name">
-      <p>Your Name : {{ name }}</p>
+      <input type="text" v-on:input="setName($event, 'Bjir')" placeholder="Enter Your Name" v-on:keyup.Enter="confirmedInput">
+      <p>Your Name : {{ confirmedName }}</p>
+    <form v-on:submit.prevent="submitForm">
+        <input type="text" placeholder="Input Text Here">
+        <button>Sign up</button>
+    </form>
     </section>
   </body>
 </html>
