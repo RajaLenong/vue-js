@@ -14,20 +14,22 @@
   </head>
   <body>
     <header>
-      <h1>Vue Events</h1>
+      <h1>Events</h1>
     </header>
-    <section id="events">
-      <h2>Events in Action</h2>
-      <button v-on:click=add(10)>Add 10</button>
-      <button v-on:click=substract(5)>substract 5</button>
-      <p v-once>Starting Counter : {{ counter }}</p>
-      <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="setName($event, 'Bjir')" placeholder="Enter Your Name" v-on:keyup.Enter="confirmedInput">
-      <p>Your Name : {{ confirmedName }}</p>
-    <form v-on:submit.prevent="submitForm">
-        <input type="text" placeholder="Input Text Here">
-        <button>Sign up</button>
-    </form>
+    <section id="assignment">
+      <h2>Event Practice</h2>
+      <!-- 1) Show an alert (any text of your choice) when the button is pressed -->
+      <form v-on:submit.prevent="submitForm">
+      <button>Show Alert</button>
+      </form>
+      <hr />
+      <!-- 2) Register the user input on "keydown" and output it in the paragraph (hint: event.target.value helps) -->
+      <input type="text" v-on:input="setName($event)" v-on:keydown="confirmedInput" v-once="confirmedInput"/>
+      <p>OUTPUT : {{ confirmedName }}</p>
+      <hr />
+      <!-- 3) Repeat 2) but only output the entered value if the ENTER key was pressed -->
+      <input type="text" v-on:input="setName($event)" v-on:keyup.Enter="confirmedInput" />
+      <p>OUTPUT : {{ confirmedName }}</p>
     </section>
   </body>
 </html>
