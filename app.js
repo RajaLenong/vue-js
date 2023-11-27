@@ -1,27 +1,21 @@
 const app = Vue.createApp({
-    data(){
-        return{
-            yourName: '',
-            yourAge: null
-        }
+    data() {
+      return {
+        counter: 0,
+        name: ''
+      }
     },
-    // mounted(){
-    //     this.futureAge = this.yourAge + 5
-    // },
     methods: {
-        favoriteNumber(){
-            const randomNumber = Math.random();
-            console.log(randomNumber);
-            if(randomNumber < 0.5){
-                return 1;
-            } else {
-                return 0;
-            }
+        add(num) {
+            return this.counter = this.counter + num;
         },
-        futureAge(){
-            return (this.yourAge) + 5
+        substract(num) {
+            return this.counter = this.counter - num;
+        },
+        setName(event, lastName) {
+            return this.name = event.target.value + ' ' + lastName;
         }
     }
-});
-
-app.mount('#assignment')
+  });
+  
+  app.mount('#events');

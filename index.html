@@ -13,26 +13,16 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <section id="assignment">
-      <!-- 1) Output your name -->
-      <h2>YOUR NAME</h2>
-      <p>{{ yourName }}</p>
-      <!-- 2) Output your age -->
-      <p>YOUR AGE</p>
-      <p>{{ yourAge }} years old </p>
-      <!-- 3) Output your age + 5 -->
-      <p>{{ yourAge }} in 5 years</p>
-      <p>{{ futureAge() }} years old </p>
-      <!-- 4) Output a random number (0 to 1) -->
-      <p>Favorite Number: RANDOM NUMBER BETWEEN 0 AND 1</p>
-      <p> Favorite number : {{ favoriteNumber() }} </p>
-      <div>
-        <!-- 5) Display some image you found via Google -->
-        <img src="src/assets/malih.jpg" alt="malih tongtong">
-      </div>
-      <!-- 6) Prepopulate the input field with your name via the "value" attribute -->
-      <input type="text" required placeholder="input your name" v-model="yourName"/>
-      <input type="number" required placeholder="input your age" v-model="yourAge"/>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button v-on:click=add(5)>Add 5</button>
+      <button v-on:click=substract(5)>substract 5</button>
+      <p>Result: {{ counter }}</p>
+      <input type="text" v-on:input="setName($event, 'Bjir')" placeholder="Enter Your Name">
+      <p>Your Name : {{ name }}</p>
     </section>
   </body>
 </html>
