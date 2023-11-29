@@ -24,12 +24,12 @@
       </form>
       <hr />
       <!-- 2) Register the user input on "keydown" and output it in the paragraph (hint: event.target.value helps) -->
-      <input type="text" v-on:input="setName($event)" v-on:keydown="confirmedInput" v-once="confirmedInput"/>
+      <input type="text" v-on:input="setName($event)" v-on:keydown.Enter="confirmedInput"/>
       <p>OUTPUT : {{ confirmedName }}</p>
       <hr />
       <!-- 3) Repeat 2) but only output the entered value if the ENTER key was pressed -->
-      <input type="text" v-on:input="setName($event)" v-on:keyup.Enter="confirmedInput" />
-      <p>OUTPUT : {{ confirmedName }}</p>
+      <input type="text" v-on:input="setName($event)" v-on:keyup.Enter="confirmedInput2" />
+      <p>OUTPUT : {{ confirmedName2 }}</p>
     </section>
   </body>
 </html>

@@ -2,18 +2,22 @@ const app = Vue.createApp({
     data() {
       return {
         name: '',
-        confirmedName: ''
+        confirmedName: '',
+        confirmedName2: ''
       }
     },
     methods: {
-        setName() {
+        setName(event) {
             return this.name = event.target.value;
         },
         confirmedInput() {
             return this.confirmedName = this.name;
         },
+        confirmedInput2() {
+          return this.confirmedName2 = this.name;
+      },
         submitForm() {
-          alert('any text of your choice');
+          alert('selamat datang bossss');
         }
     }
   });
